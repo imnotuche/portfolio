@@ -20,7 +20,7 @@ export default function GridBg({ children }: GridBgProps) {
                 className="fixed left-0 right-0 h-0.5 pointer-events-none z-9999"
                 style={{
                     background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)",
-                    animation: "scanline 8s linear infinite, scanLinePulse 0.07s infinite",
+                    animation: "scanline 15s linear infinite, scanLinePulse 0.07s infinite",
                 }}
             />
             <div className="relative z-10">

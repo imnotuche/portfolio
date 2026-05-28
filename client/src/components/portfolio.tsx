@@ -1,3 +1,5 @@
+"use client";
+
 import GridBg from "./UI/GridBg"
 import NavBar from "./UI/NavBar"
 import Home from "./Home"
