@@ -35,7 +35,7 @@ export default function Home() {
             id="home"
             className="relative z-10 min-h-screen flex flex-col justify-center px-6 pt-30 pb-20 max-w-225 mx-auto"
         >
-            <p className="font-mono text-[11px] tracking-[0.3em] text-white/25 uppercase mb-6">
+            <div className="font-mono text-[11px] tracking-[0.3em] text-white/25 uppercase mb-6">
                 <div className="flex items-center gap-2.5 mb-8">
                     <div
                         className="w-2 h-2 rounded-full bg-[#22ff88] shadow-[0_0_12px_#22ff88]"
@@ -45,7 +45,7 @@ export default function Home() {
                         Available for work
                     </span>
                 </div>
-            </p>
+            </div>
 
             <h1
                 className="font-mono text-[clamp(48px,9vw,92px)] font-extrabold leading-[0.95] tracking-[-0.04em] mb-6"

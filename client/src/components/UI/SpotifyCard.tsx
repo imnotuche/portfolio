@@ -1,8 +1,17 @@
+import { useState, useEffect } from "react";
 import GlassCard from "./GlassCard";
 
-export default function SpotifyCard() {
+const NUM_BARS = 40;
 
-    const bars = Array.from({ length: 40 }, () => Math.random() * 0.8);
+const SSR_DELAYS = Array.from({ length: NUM_BARS }, (_, i) => (i / NUM_BARS) * 0.8);
+
+export default function SpotifyCard() {
+    
+    const [bars, setBars] = useState<number[]>(SSR_DELAYS);
+
+    useEffect(() => {
+        setBars(Array.from({ length: NUM_BARS }, () => Math.random() * 0.8));
+    }, []);
 
     return (
         <GlassCard className="p-5.5">
@@ -16,12 +25,9 @@ export default function SpotifyCard() {
                 </span>
                 <span
                     className="ml-auto w-1.75 h-1.75 rounded-full shrink-0 transition-all duration-300"
-                    style={{
-                        
-                    }}
+                    style={{}}
                 />
             </div>
-
             {/* Track info */}
             <div className="flex gap-3.5 items-center">
                 <div
@@ -35,7 +41,6 @@ export default function SpotifyCard() {
                 >
                     ♪
                 </div>
-
                 <div className="flex-1 min-w-0">
                     <div className="text-white font-bold text-[13px] mb-0.5 truncate">
                         Song Title Here
@@ -43,9 +48,7 @@ export default function SpotifyCard() {
                     <div className="text-white/40 text-[11px] font-mono">
                         Artist Name
                     </div>
-
                 </div>
-
                 <div className="flex items-end gap-0.5 h-8">
                     {bars.map((d, i) => (
                         <div
@@ -55,9 +58,7 @@ export default function SpotifyCard() {
                         />
                     ))}
                 </div>
-
             </div>
-
         </GlassCard>
     );
 }

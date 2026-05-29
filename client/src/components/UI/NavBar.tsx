@@ -40,7 +40,7 @@ export default function NavBar() {
         <nav className="
             bg-white/5 backdrop-blur-md
             fixed top-5 left-1/2 -translate-x-1/2
-            flex items-center
+            flex items-center overflow-hidden
             border border-white/10
             rounded-full px-1 py-1
             gap-1 z-50
@@ -59,8 +59,8 @@ export default function NavBar() {
                                 className="absolute inset-0 bg-white/10 border border-white/15 rounded-full -z-10"
                                 transition={{
                                     type: "spring",
-                                    stiffness: 300,
-                                    damping: 30,
+                                    stiffness: 250,
+                                    damping: 18,
                                 }}
                             />
                         )}

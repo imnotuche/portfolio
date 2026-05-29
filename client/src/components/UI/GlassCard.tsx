@@ -5,14 +5,20 @@ type GlassCardProps = {
     onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export default function GlassCard({ children, className = "", onMouseEnter, onMouseLeave }: GlassCardProps) {
+export default function GlassCard({ 
+    children, 
+    className = "", 
+    onMouseEnter, 
+    onMouseLeave 
+}: GlassCardProps) {
+
     return (
         <div
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             className={`
-                relative overflow-hidden rounded-[20px]
                 bg-white/4 border border-white/8
+                relative overflow-hidden rounded-[20px]
                 backdrop-blur-xl
                 transition-[border-color,box-shadow,transform] duration-300
                 ${className}
@@ -25,10 +31,16 @@ export default function GlassCard({ children, className = "", onMouseEnter, onMo
             }}
         >
             <div
-                className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-                style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)" }}
+                className="
+                    absolute top-0 left-0 right-0 
+                    h-px pointer-events-none"
+                style={{ 
+                    background: 
+                    "linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)"
+                }}
             />
             {children}
         </div>
+
     );
 }

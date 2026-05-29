@@ -6,8 +6,8 @@ export default function About() {
 
     const stats = [["3+", "Projects"], ["B.sc.", "Computer Science"], ["Full Stack", "Developer"]];
     const SKILLS = [
-        "React", "TypeScript", "Node.js", "Vue", "PostgreSQL", 
-        "MongoDB", "Python", "Express", "Git", "REST", "APIs",
+        "React", "Next.js", "TypeScript", "Node.js", "Vue", "PostgreSQL", 
+        "MongoDB", "Redis", "Python", "Express", "Git", "REST", "APIs",
         "PyTorch", "scikit-learn"
     ];
 
@@ -87,7 +87,7 @@ export default function About() {
                         </div>
                     </GlassCard>
 
-                    <SpotifyCard />
+                    {/*<SpotifyCard />*/}
 
                 </div>
             </div>
