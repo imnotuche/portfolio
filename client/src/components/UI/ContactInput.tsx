@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 
-type contactInputProps = {
+type ContactInputProps = {
     label: string;
     type?: string;
     placeholder?: string;
     multiline?: boolean;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
 export default function ContactInput({
@@ -14,15 +16,15 @@ export default function ContactInput({
     type = "text",
     placeholder,
     multiline,
-} : contactInputProps) {
+    value,
+    onChange,
+}: ContactInputProps) {
 
     const [focused, setFocused] = useState(false);
     const Tag = multiline ? "textarea" : "input";
 
     return (
-
         <div className="mb-4">
-
             <label className="
                 block 
                 text-[10px] text-white/30 
@@ -34,7 +36,7 @@ export default function ContactInput({
 
             <Tag className={`
                 bg-white/4
-                w-full  rounded-xl outline-none 
+                w-full rounded-xl outline-none 
                 px-3.75 py-3.25 
                 text-white text-sm 
                 transition-all duration-200 box-border
@@ -46,12 +48,12 @@ export default function ContactInput({
             `}
                 type={type}
                 placeholder={placeholder}
+                value={value}
+                onChange={onChange}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
                 rows={multiline ? 5 : undefined}
             />
-
         </div>
-
     );
 }
