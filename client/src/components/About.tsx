@@ -7,7 +7,8 @@ export default function About() {
     const stats = [["3+", "Projects"], ["B.sc.", "Computer Science"], ["Full Stack", "Developer"]];
     const SKILLS = [
         "React", "Next.js", "TypeScript", "Node.js", "Vue", "PostgreSQL", 
-        "MongoDB", "Redis", "Python", "Express", "Git", "REST", "APIs",
+        "Render", "Vercel", "MongoDB Atlas",
+        "MongoDB", "Redis", "Python", "ML", "Express", "Git", "REST", "APIs",
         "PyTorch", "scikit-learn"
     ];
 
