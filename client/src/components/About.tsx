@@ -1,6 +1,5 @@
 import SectionLabel from "./UI/SectionLabel";
 import GlassCard from "./UI/GlassCard";
-import SpotifyCard from "./UI/SpotifyCard";
 
 export default function About() {
 
@@ -10,6 +9,10 @@ export default function About() {
         "Render", "Vercel", "MongoDB Atlas",
         "MongoDB", "Redis", "Python", "ML", "Express", "Git", "REST", "APIs",
         "PyTorch", "scikit-learn"
+    ];
+    const FOCUS = [
+        "Building Andora — a messaging app",
+        "Learning quantitative finance",
     ];
 
     return (
@@ -88,11 +91,24 @@ export default function About() {
                         </div>
                     </GlassCard>
 
-                    {/*<SpotifyCard />*/}
-
+                    <GlassCard className="p-5.5">
+                        <p className="
+                            font-mono text-[10px] tracking-[0.2em]
+                            text-white/25 uppercase mb-3
+                        ">
+                            Current Focus
+                        </p>
+                        <div className="flex flex-col gap-2">
+                            {FOCUS.map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                    <span className="font-mono text-[11px] text-white/20 mt-px shrink-0">↳</span>
+                                    <span className="font-mono text-[11px] text-white/50 leading-[1.6]">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </GlassCard>
                 </div>
             </div>
         </section>
     );
-
 }

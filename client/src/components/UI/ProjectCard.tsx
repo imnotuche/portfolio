@@ -16,7 +16,7 @@ export default function ProjectCard({ title, desc, tags, index, link }: ProjectC
 
   return (
     <a href={link}>
-      <GlassCard
+      <GlassCard glare
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className={`p-6.5 transition-all duration-300 ${
