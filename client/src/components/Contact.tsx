@@ -42,7 +42,7 @@ const channels = [
     { icon: <GitHubIcon />, label: "GitHub", value: "@imnotuche", href: "https://github.com/imnotuche" },
     { icon: <XIcon />, label: "Twitter / X", value: "@imnotuche", href: "https://x.com/imnotuche" },
     { icon: <WhatsAppIcon />, label: "Whatsapp", value: "08127644432", href: "https://wa.me/2348127644432" },
-    { icon: <DiscordIcon />, label: "Discord", value: "@imnotuche", href: "" },
+    { icon: <DiscordIcon />, label: "Discord", value: "@imnotuche", href: "https://discord.com/users/1099740092748284005" },
 ];
 
 export default function Contact() {
