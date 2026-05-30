@@ -17,6 +17,10 @@ export default function NavBar() {
 
     useEffect(() => {
         const observers: IntersectionObserver[] = [];
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => { lastScrollY = window.scrollY; };
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
         navItems.forEach((name, index) => {
             const section = document.getElementById(name);
@@ -24,19 +28,28 @@ export default function NavBar() {
 
             const observer = new IntersectionObserver(
                 ([entry]) => {
-                    if (entry.isIntersecting) setActiveIndex(index);
+                    const scrollingDown = window.scrollY >= lastScrollY;
+
+                    if (scrollingDown && entry.isIntersecting) {
+                        setActiveIndex(index);
+                    } else if (!scrollingDown && entry.isIntersecting) {
+                        setActiveIndex(index);
+                    } else if (!scrollingDown && !entry.isIntersecting && entry.boundingClientRect.bottom > 0) {
+                        // section just scrolled out from the bottom while going up
+                        setActiveIndex(Math.max(0, index - 1));
+                    }
                 },
-                { 
-                    threshold: 0,
-                    rootMargin: "-80px 0px -80% 0px"
-                }
+                { threshold: 0, rootMargin: "-80px 0px -60% 0px" }
             );
 
             observer.observe(section);
             observers.push(observer);
         });
 
-        return () => observers.forEach((o) => o.disconnect());
+        return () => {
+            observers.forEach((o) => o.disconnect());
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     return (
