@@ -28,7 +28,7 @@ export default function NavBar() {
                 },
                 { 
                     threshold: 0,
-                    rootMargin: "-80px 0px 0px 0px"
+                    rootMargin: "-80px 0px -80% 0px"
                 }
             );
 
