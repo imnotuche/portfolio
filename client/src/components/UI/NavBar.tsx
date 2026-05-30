@@ -26,7 +26,10 @@ export default function NavBar() {
                 ([entry]) => {
                     if (entry.isIntersecting) setActiveIndex(index);
                 },
-                { threshold: 0.5 }
+                { 
+                    threshold: 0,
+                    rootMargin: "-80px 0px 0px 0px"
+                }
             );
 
             observer.observe(section);
